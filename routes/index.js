@@ -1,8 +1,5 @@
+var pact = require('../pact.js');
 
-/*
- * GET home page.
- */
-
-exports.index = function(req, res){
+exports.main = function(req, res){
   res.render('index', { title: 'Express' });
 };
