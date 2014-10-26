@@ -35,7 +35,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(function(err, req, res, next){
-    console.errror(err.stack);
+    console.error(err.stack);
     res.send(500, 'Something broke!');
   });
 });
