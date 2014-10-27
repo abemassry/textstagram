@@ -28,6 +28,23 @@
               <a href="/about">About</a>
             </li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if (user) { %>
+              <li>
+                <a href="/profile">Profile</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            <% } else { %>
+              <li>
+                <a href="/login">Login</a>
+              </li>
+              <li>
+                <button class="btn btn-success navbar-btn" href="/signup">Sign Up</button>
+              </li>
+            <% } %>
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
