@@ -1,4 +1,5 @@
 var appio = require('./app.js').io;
+var bcrypt = require('bcrypt');
 
 var getId = function() {
   var randInt = getRandomInt(1, 999999999999999);
@@ -24,4 +25,4 @@ function getRandomInt (min, max) {
 
 exports.getId = getId;
 exports.io = appio;
-
+exports.bcrypt = bcrypt;
