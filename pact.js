@@ -1,5 +1,7 @@
 var appio = require('./app.js').io;
 var bcrypt = require('bcrypt');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
 
 var getId = function() {
   var randInt = getRandomInt(1, 999999999999999);
