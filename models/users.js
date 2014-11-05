@@ -3,6 +3,11 @@ module.exports = function(mongoose) {
   var Schema = mongoose.Schema;
   var ObjectId = Schema.ObjectId;
 
+  var Following = new Schema({
+    follow_id: Objectd,
+    timestamp: Date,
+    user
+
   var schema = new Schema({
     uid: ObjectId,
     name: String,

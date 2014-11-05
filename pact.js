@@ -2,6 +2,8 @@ var appio = require('./app.js').io;
 var bcrypt = require('bcrypt');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
+var models = {};
+models.users = require('./models/users')(mongoose);
 
 var getId = function() {
   var randInt = getRandomInt(1, 999999999999999);
@@ -28,3 +30,4 @@ function getRandomInt (min, max) {
 exports.getId = getId;
 exports.io = appio;
 exports.bcrypt = bcrypt;
+exports.models = models;
