@@ -3,18 +3,21 @@ module.exports = function(mongoose) {
   var Schema = mongoose.Schema;
   var ObjectId = Schema.ObjectId;
 
-  var Following = new Schema({
+  var Followers = new Schema({
     follow_id: Objectd,
     timestamp: Date,
-    user
+    user_name: String
+  });
+  exports.Followers = mongoose.model('Followers', Followers);
 
   var schema = new Schema({
     uid: ObjectId,
-    name: String,
+    user_name: String,
     email: String,
     photo: String,
     account_created: Date,
-    last_active: Date
+    last_active: Date,
+    followers: [Followers]
   });
 
   return mongoose.model(collection, schema);

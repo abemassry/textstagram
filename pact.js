@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 var models = {};
 models.users = require('./models/users')(mongoose);
+models.posts = require('./models/posts')(mongoose);
 
 var getId = function() {
   var randInt = getRandomInt(1, 999999999999999);
