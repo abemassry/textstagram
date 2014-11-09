@@ -18,8 +18,17 @@ exports.main = function(req, res){
       var User = pact.models.users;
       var user = new User();
       user.user_name = userName;
+      user.password = hash;
+      user.account_created = now;
+      user.last_active = now;
+      user.save(function(err) {
+        if(err) {throw err;}
+        req.session.logged = true;
+        req.session.user = userName;
+        console.log("account created");
+        res.redirect('/');
+      });
+    }
+  });
 
-  res.render('signup', { title: 'Sign Up',
-                        user: false
-                      });
 };

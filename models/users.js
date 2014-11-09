@@ -13,6 +13,7 @@ module.exports = function(mongoose) {
   var schema = new Schema({
     uid: ObjectId,
     user_name: String,
+    password: String,
     email: String,
     photo: String,
     account_created: Date,
