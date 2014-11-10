@@ -4,7 +4,7 @@ exports.main = function(req, res){
   var userName = req.param('username');
   var password = req.param('password');
   var salt = pact.bcrypt.genSaltSync(10);
-  var hash = pact.bcrypt.hashSync(passwd, salt);
+  var hash = pact.bcrypt.hashSync(password, salt);
   var now = new Date();
   pact.models.users.findOne({user_name: userName}, function(err, doc) {
     if(err) return handleError(err);

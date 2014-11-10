@@ -51,7 +51,12 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      <% if (errMessage)
+      <% if ( typeof errMessage !== "undefined") { %>
+        <div class="alert alert-danger alert-dismissable" role="alert">
+          <%= errMessage %>
+        </div>
+      <% } %>
+        
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
       <%- body %>

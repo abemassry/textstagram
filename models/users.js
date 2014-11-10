@@ -4,7 +4,7 @@ module.exports = function(mongoose) {
   var ObjectId = Schema.ObjectId;
 
   var Followers = new Schema({
-    follow_id: Objectd,
+    follow_id: ObjectId,
     timestamp: Date,
     user_name: String
   });
