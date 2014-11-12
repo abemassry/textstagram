@@ -12,7 +12,7 @@ exports.main = function(req, res){
       res.render('signup', {
         title: 'Sign Up',
         user: false,
-        errMessage: 'email already registered'
+        errMessage: 'name already registered'
       });
     } else {
       var User = pact.models.users;

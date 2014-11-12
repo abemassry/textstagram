@@ -50,6 +50,7 @@ app.get('/signup', routes.signup.main);
 app.post('/signupweb', routes.signupweb.main);
 app.get('/submit', routes.submit.main);
 app.get('/about', routes.about.main);
+app.get('/profile', routes.profile.main);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
