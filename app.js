@@ -46,6 +46,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index.main);
 app.get('/login', routes.login.main);
+app.get('/logout', routes.logout.main);
 app.get('/signup', routes.signup.main);
 app.post('/signupweb', routes.signupweb.main);
 app.get('/submit', routes.submit.main);
