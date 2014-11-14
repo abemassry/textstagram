@@ -1,7 +1,7 @@
 var pact = require('../pact.js');
 
 exports.main = function(req, res){
-  res.render('index', { title: 'Login',
+  res.render('login', { title: 'Login',
                         user: false
                       });
 };

@@ -11,7 +11,7 @@ exports.main = function(req, res){
       if(err) return handleError(err);
       if (doc) {
         var hash = doc.password;
-        if (bcrypt.compareSync(passwd, hash)) {
+        if (pact.bcrypt.compareSync(password, hash)) {
           doc.last_active = now;
           doc.save(function(err) {
             if(err) { throw err; }
