@@ -11,7 +11,8 @@ exports.main = function(req, res){
                               user: username,
                               posts: posts
                             }
-                  });
+                  );
+      });
     } else {
       res.redirect('/404');
     }
