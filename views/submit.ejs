@@ -12,7 +12,7 @@
   <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
   <div class="col-md-10 col-md-offset-1">
     <form name="form-testdoc" method="POST" action="/post" id="form_code_sub" class="form">
-      <textarea id="mainText" name="post-content" class="form-control" rows="4" style="font-family: 'Roboto Slab', serif; font-size: 30px; background: blue; color: white;"></textarea>
+      <textarea id="mainText" name="post-content" class="form-control" rows="4"></textarea>
       <span class="help-block">Submit a new Textstagram</span><button type="submit" id="sub_but" class="btn btn-primary">Submit</button>
     </form>
   </div>
@@ -76,5 +76,58 @@
   $("#mainText").bind('input propertychange', function(){
     $(".filterText").text($("#mainText").val());
   });
+  var previousClass = "whole-wheat";
+  $(document).ready(function (){
+    $("#mainText").addClass("whole-wheat");
+  });
+  $(".whole-wheat").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("whole-wheat");
+    previousClass = "whole-wheat";
+  });
+  $(".dressed-up").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("dressed-up");
+    previousClass = "dressed-up";
+  });
+  $(".stark").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("stark");
+    previousClass = "stark";
+  });
+  $(".blueprint").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("blueprint");
+    previousClass = "blueprint";
+  });
+  $(".clarity").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("clarity");
+    previousClass = "clarity";
+  });
+  $(".royal").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("royal");
+    previousClass = "royal";
+  });
+  $(".teletype").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("teletype");
+    previousClass = "teletype";
+  });
+  $(".one-up").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("one-up");
+    previousClass = "one-up";
+  });
+  $(".lights").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("lights");
+    previousClass = "lights";
+  });
+  $(".vortex").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("vortex");
+    previousClass = "vortex";
+  });
+  $(".confidential").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("confidential");
+    previousClass = "confidential";
+  });
+  $(".broadway").click(function (){
+    $("#mainText").removeClass(previousClass).addClass("broadway");
+    previousClass = "broadway";
+  });
+
 
 </script>
