@@ -11,6 +11,8 @@
 }
 .filterText {
   cursor: pointer;
+  min-height: 42px;
+  padding-top: 3px;
 }
 
 /* filters */
@@ -68,6 +70,7 @@
   color: white;
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
+  padding-top: 10px;
 }
 .confidential {
   font-family: 'Special Elite', cursive;
