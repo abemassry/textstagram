@@ -1,2 +1,8 @@
 <h1>Textstagram</h1>
 <p>Welcome to textstagram</p>
+<% 
+  for (var key in posts) {
+    var post = posts[key];
+%>
+<span><%= post %></span>
+<% } %>
