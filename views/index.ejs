@@ -3,6 +3,16 @@
 <% 
   for (var key in posts) {
     var post = posts[key];
-    } 
+    if (post.filter) {
+      var filter = post.filter;
+    }
+%>
+<div class=row>
+  <div class="col-md-8 col-md-offset-2">Submitted By: <%= post.submitted_by %></div>
+  <br />
+  <a href="/p/<%= post._id %>"><div class="col-md-8 col-md-offset-2 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div></a>
+</div>
+
+<%
   }
 %>
