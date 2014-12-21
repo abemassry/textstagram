@@ -4,7 +4,7 @@ exports.main = function(req, res){
   if (req.user) {
     var username = req.sesssion.user;
   }
-  pact.models.findOne({name: req.params.name}, function(err, data){
+  pact.models.users.findOne({name: req.params.name}, function(err, data){
     if (data) {
       pact.models.posts.find({submitted_by: req.params.name }).limit(30).sort('-date').exec(function(err, posts){
         res.render('user', {  title: req.params.name,
@@ -13,8 +13,8 @@ exports.main = function(req, res){
                             }
                   );
       });
-    } else {
-      res.redirect('/404');
+   // } else {
+   //   res.redirect('/404');
     }
   });
 };
