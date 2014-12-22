@@ -1,4 +1,15 @@
 <div class=row>
-  <div class="col-md-3 col-md-offset-2"><a href="/user/<%= post.submitted_by %>"><%= post.submitted_by %></div>
+  <div class="col-md-8 col-md-offset-2" style="margin-bottom: 20px">
+    <a href="/user/<%= post.submitted_by %>"><img height="50" src="https://secure.gravatar.com/avatar/cd22b125598d302d73fd83719f262292?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="50"></a><br /><br />
+    <a href="/user/<%= post.submitted_by %>"><%= post.submitted_by %></a>
+    <span class="pull-right"><time class="timeago" datetime="<%= post.date.toISOString() %>"><%= post.date.toISOString() %></time></span>
+    <hr />
+    <button id="like_<%= post._id %>" class="btn btn-primary like" type="button"><i class="fa fa-thumbs-o-up"></i> Like</button>
+    <span class="pull-right">
+      <span class="label label-warning">100 Comments</span>
+      <span class="label label-warning">100 Likes</span>
+    </span>
+  </div>
+  <br /><br />
   <div class="col-md-8 col-md-offset-2 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div>
 </div>
