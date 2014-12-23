@@ -12,4 +12,14 @@
   </div>
   <br /><br />
   <div class="col-md-8 col-md-offset-2 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div>
+  <div class="col-md-8 col-md-offset-2">
+    <form name="form-comment" method="POST" action="/comment" id="form_post_sub" class="form">
+      <input type="hidden" name="_method" value="POST" />
+      <input type="hidden" name="post_id" value="<%= post._id %>" />
+      <label>Comment</label>
+      <textarea name="comment" type="text" id="comment" value="" rows="3"></textarea>
+      <button type="submit" id="sub_but" class="btn btn-primary">Comment</button>
+    </form>
+  </div>
+
 </div>
