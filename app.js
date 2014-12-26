@@ -56,6 +56,7 @@ app.get('/profile', routes.profile.main);
 app.get('/user/:name', routes.user.main);
 app.post('/postcontent', routes.postcontent.main);
 app.get('/p/:id', routes.post.main);
+app.post('/comment', routes.comment.main);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

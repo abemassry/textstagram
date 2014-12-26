@@ -6,7 +6,7 @@
     <hr />
     <button id="like_<%= post._id %>" class="btn btn-primary like" type="button"><i class="fa fa-thumbs-o-up"></i> Like</button>
     <span class="pull-right">
-      <span class="label label-warning">100 Comments</span>
+      <span class="label label-warning"><%= post.comments.length %> Comments</span>
       <span class="label label-warning">100 Likes</span>
     </span>
   </div>
@@ -18,7 +18,14 @@
     <br />
     <br />
 
-    <h3>Comments (100)</h3>
+    <h3>Comments (<%= post.comments.length %>)</h3>
+    <% if (post.comments.length > 0) { post.comments.forEach(function(comment) { %>
+      <div class="col-md-8 col-md-offset-2" >
+        <%= comment.date_commented %>
+        <%= comment.user %>
+        <%= comment.body %>
+      </div>
+    <% });} %>
     <br />
     <form name="form-comment" method="POST" action="/comment" id="form_post_sub" class="form">
       <input type="hidden" name="_method" value="POST" />
