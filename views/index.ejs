@@ -8,10 +8,25 @@
     }
 %>
 <div class=row>
-  <div class="col-md-8 col-md-offset-2">Submitted By: <%= post.submitted_by %></div>
-  <br />
-  <a href="/p/<%= post._id %>"><div class="col-md-8 col-md-offset-2 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div></a>
+    <div class="pull-left">
+      <a href="/user/<%= post.submitted_by %>"><img height="50" src="https://secure.gravatar.com/avatar/cd22b125598d302d73fd83719f262292?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="50"></a><br /><br />
+      <a href="/user/<%= post.submitted_by %>"><%= post.submitted_by %></a>
+      <br />
+      <span><time class="timeago" datetime="<%= post.date.toISOString() %>"><%= post.date.toISOString() %></time></span>
+    </div>
+    <span class="pull-right">
+      <span class="label label-warning"><%= post.comments.length %> Comments</span>
+      <span class="label label-warning">100 Likes</span>
+      <br />
+      <br />
+    <button id="like_<%= post._id %>" class="pull-right btn btn-primary like" type="button"><i class="fa fa-thumbs-o-up"></i> Like</button>
+    </span>
+  <div class="col-md-8 col-md-offset-1 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div>
 </div>
+  <br />
+  <br />
+  <br />
+  <br />
 
 <%
   }
