@@ -21,7 +21,7 @@
       <br />
     <button id="like_<%= post._id %>" class="pull-right btn btn-primary like" type="button"><i class="fa fa-thumbs-o-up"></i> Like</button>
     </span>
-  <div class="col-md-8 col-md-offset-1 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div>
+    <a href="/p/<%= post._id %>"><div class="col-md-8 col-md-offset-1 <%= post.filter %>" style="font-size: 57px; padding-bottom: 10px;"><%= post.body %></div></a>
 </div>
   <br />
   <br />
