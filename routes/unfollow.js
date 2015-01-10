@@ -4,7 +4,7 @@ exports.main = function(req, res){
   if (req.session.user) {
     var userName = req.session.user;
     var now = new Date();
-    pact.models.users.findOne({user_name: tounfollow}, function(err, doc) {
+    pact.models.users.findOne({user_name: req.param('tounfollow')}, function(err, doc) {
       if(err) return handleError(err);
       if (doc) {
         var post_id = req.param('post_id');

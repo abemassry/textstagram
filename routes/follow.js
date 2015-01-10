@@ -4,11 +4,11 @@ exports.main = function(req, res){
   if (req.session.user) {
     var userName = req.session.user;
     var now = new Date();
-    pact.models.users.findOne({user_name: tofollow}, function(err, doc) {
+    pact.models.users.findOne({user_name: req.param('tofollow')}, function(err, doc) {
       if(err) return handleError(err);
       if (doc) {
-        var post_id = req.param('post_id');
-        pact.models.posts.findById(post_id, function(err, post){
+        var follow_name = req.param('tofollow');
+        pact.models.users.findOne(post_id, function(err, post){
           if (err) return handleError(err);
           post.comments.push({user: userName, body: req.param('comment'), date_commented: now});
           var doc = post.comments[0];
