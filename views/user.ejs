@@ -14,7 +14,7 @@
    
     $.ajax({  
       type: "POST",  
-      data: "tofollow="+<%= title %>,  
+      data: "tofollow=<%= title %>",  
       url: "/followuser",
       success: function(msg)  
       {  
