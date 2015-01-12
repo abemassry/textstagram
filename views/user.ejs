@@ -1,54 +1,54 @@
 <div class="col-md-11">
   <img height="100" src="https://secure.gravatar.com/avatar/cd22b125598d302d73fd83719f262292?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="100" class="pull-left st-push5-right">
   <h3 class="black">&nbsp;&nbsp;&nbsp; <%= title %></h3>
-  <h4>&nbsp;&nbsp;&nbsp; Followers: <span id="followers_count">100</span> &nbsp;&nbsp;&nbsp; Following: 100</h4>
+  <h4>&nbsp;&nbsp;&nbsp; Followers: <span id="followers_count"><%= followers %></span> &nbsp;&nbsp;&nbsp; Following: <span id="following_count"><%= following %></span></h4>
   <hr />
-  <button type="button" id="follow" class="btn follow">
-    Follow
-  </button>
+  <button type="button" id="follow" class="btn follow">Follow</button>
+  <button type="button" id="following" class="btn follow" style="display: none">Following</button>
   <script>
-  $(function(){  
-   $("button#follow").click(function(){  
-    //fadeout the follower-count  
-    $("span#followers_count").fadeOut("fast");
-   
-    $.ajax({  
-      type: "POST",  
-      data: "tofollow=<%= title %>",  
-      url: "/followuser",
-      success: function(msg)  
-      {  
-       $("span#followers_count").html(msg);  
-       //fadein the vote count  
-       $("span#followers_count").fadeIn();
-       $("button#follow").replaceWith("Following");
-       $("button#follow").attr("id","following");
-      }  
-    });
-   });  
+  $(function(){
+    $("button#follow").click(function(){  
+     //fadeout the follower-count  
+     $("span#followers_count").fadeOut("fast");
+    
+     $.ajax({  
+       type: "POST",  
+       data: "tofollow=<%= title %>",  
+       url: "/followuser",
+       success: function(msg)  
+       {  
+         console.log(msg);
+         $("span#followers_count").html(msg);  
+         //fadein the vote count  
+         $("span#followers_count").fadeIn();
+         $("button#follow").fadeOut("fast");
+         $("button#follwing").show();
+         $("button#follwing").fadeIn();
+         //$("button#follow").replaceWith('<button type="button" id="following" class="btn follow">Following</button>');
+       }  
+     });
+    });  
   });  
-
-  </script>
-  <script>
   $(function(){  
-   $("button#following").click(function(){  
-    //fadeout the follower-count  
-    $("span#followers_count").fadeOut("fast");
-   
-    $.ajax({  
-      type: "POST",  
-      data: "tounfollow="+<%= title %>,  
-      url: "/unfollowuser",
-      success: function(msg)  
-      {  
-       $("span#followers_count").html(msg);  
-       //fadein the vote count  
-       $("span#followers_count").fadeIn();
-       $("button#following").replaceWith("Follow");
-       $("button#following").attr("id","follow");
-      }  
-    });
-   });  
+    $("button#following").click(function(){  
+      //fadeout the follower-count  
+      $("span#followers_count").fadeOut("fast");
+      
+      $.ajax({  
+        type: "POST",  
+        data: "tounfollow=<%= title %>",  
+        url: "/unfollowuser",
+        success: function(msg)  
+        {
+          $("span#followers_count").html(msg);  
+          //fadein the vote count  
+          $("span#followers_count").fadeIn();
+          $("button#following").fadeOut("fast");
+          $("button#follow").fadeIn();
+         //$("button#following").replaceWith('<button type="button" id="follow" class="btn follow">Follow</button>');
+        }  
+      });
+    });  
   });  
 
   </script>
