@@ -37,6 +37,7 @@
     $("button#following").click(function(){  
       //fadeout the follower-count  
       $("span#followers_count").fadeOut("fast");
+      $("button#following").fadeOut("fast");
       
       $.ajax({  
         type: "POST",  
@@ -47,8 +48,7 @@
           $("span#followers_count").html(msg);  
           //fadein the vote count  
           $("span#followers_count").fadeIn();
-          $("button#following").fadeOut("fast");
-          $("button#follow").fadeIn(1400);
+          $("button#follow").fadeIn(1600);
          //$("button#following").replaceWith('<button type="button" id="follow" class="btn follow">Follow</button>');
         }  
       });

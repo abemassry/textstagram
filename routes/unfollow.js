@@ -26,7 +26,7 @@ exports.main = function(req, res){
         pact.models.users.findOne({user_name: unfollow_name}, function(err, unfollowModel){
           if (err) return handleError(err);
           unfollowModel.followers.forEach(function(unfollower) {
-            if (unfollower.user_name == unfollow_name) {
+            if (unfollower.user_name == userName) {
               var unfollowerId = unfollower.id;
               console.log('unfollowerId');
               console.log(unfollowerId);
