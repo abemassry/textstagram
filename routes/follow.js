@@ -1,9 +1,7 @@
 var pact = require('../pact.js');
 
 exports.main = function(req, res){
-  console.log('made it inside function');
   if (req.session.user) {
-    console.log('made it inside function and if statement');
     var userName = req.session.user;
     var now = new Date();
     pact.models.users.findOne({user_name: userName}, function(err, userModel) {
