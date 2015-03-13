@@ -59,6 +59,7 @@ app.get('/p/:id', routes.post.main);
 app.post('/comment', routes.comment.main);
 app.post('/followuser', routes.follow.main);
 app.post('/unfollowuser', routes.unfollow.main);
+app.post('/like', routes.like.main);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
