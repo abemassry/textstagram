@@ -7,41 +7,17 @@
 
      $.ajax({
        type: "POST",
-       data: "tofollow=<%= title %>",
-       url: "/followuser",
+       data: "post_id=<%= post._id %>",
+       url: "/like",
        success: function(msg)
        {
          console.log(msg);
-         $("span#followers_count").html(msg);
+         $("button#like_<%= post._id %>").replaceWith('<button type="button" class="btn liked disabled="disabled">Liked</button>');
+         $("span#like_count_<%= post._id %>").html(msg);
          //fadein the vote count
-         $("span#followers_count").fadeIn();
-         $("button#follow").fadeOut("fast");
-         //$("button#following").removeAttr( 'style' );
-         $("button#following").fadeIn(1100);
-         //$("button#follow").replaceWith('<button type="button" id="following" class="btn follow">Following</button>');
+         $("span#like_count_<%= post._id %>").fadeIn();
        }
      });
-    });
-  });
-  $(function(){
-    $("button#following").click(function(){
-      //fadeout the follower-count
-      $("span#followers_count").fadeOut("fast");
-      $("button#following").fadeOut("fast");
-
-      $.ajax({
-        type: "POST",
-        data: "tounfollow=<%= title %>",
-        url: "/unfollowuser",
-        success: function(msg)
-        {
-          $("span#followers_count").html(msg);
-          //fadein the vote count
-          $("span#followers_count").fadeIn();
-          $("button#follow").fadeIn(1600);
-         //$("button#following").replaceWith('<button type="button" id="follow" class="btn follow">Follow</button>');
-        }
-      });
     });
   });
 
@@ -54,7 +30,7 @@
     <button id="like_<%= post._id %>" class="btn btn-primary like" type="button"><i class="fa fa-thumbs-o-up"></i> Like</button>
     <span class="pull-right">
       <span class="label label-warning"><%= post.comments.length %> Comments</span>
-			<span class="label label-warning"><span id="like_count_<%= post._id %>">100</span> Likes</span>
+			<span class="label label-warning"><span id="like_count_<%= post._id %>"><%= post.likes.length %></span> Likes</span>
     </span>
   </div>
   <br /><br />
